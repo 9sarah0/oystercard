@@ -8,8 +8,7 @@ describe Oystercard do
 
   it 'tops up the card' do
     random_number = rand(1000)
-    card.top_up(random_number)
-    expect(card.balance).to eq random_number
+    expect{ card.top_up(random_number) }.to change{ card.balance }.by random_number
   end
 
 end
